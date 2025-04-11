@@ -57,8 +57,9 @@ func main() {
 
 
 	//shadowing
+	fmt.Println(v)
 	if age>18{
-		v:=47 //global scope eo v ache and ei local scope eo v initialize kora ache.erokom case holo variable shadowing and local scope e v er value shadow hoise 
+		v:=47 //global scope eo v ache and ei local scope eo v initialize kora ache.erokom case holo variable shadowing and local scope e v er value shadow hoise.but ekhane v er value re-assign korle(v=47) lekhle ei scope er baire v er value 47 e hoto. it's not shadowing. It's keeping the value in the same memory location. When variables in two different memory locations are created with same name, and one shadows another, then it's variable shadowing.
 		fmt.Println(v)
 	}
 	fmt.Println(v)
