@@ -18,10 +18,25 @@ func init(){
 	// fmt.Println(a) 
 }
 
-func main(){
-	add(2,4) //argument:2,4 =>value pass
-	fmt.Println(a)
+//###Higher order function:
+	func processOperation(a int,b int,op func(p int,q int)){
+		op(a,b)
+	}
+	func mul(x int,y int){
+		z:=x*y
+		fmt.Println(z)
+	}
+	func call() func(p int,q int){
+		return mul
+	}
 
+
+func main(){
+	add(2,4) //argument:2,4 => value pass
+	fmt.Println(a)
+	processOperation(2,4,mul)
+	product:=call()
+	product(2,3)
 	// anonymous function:Jar name thake na
 	func(a int,b int){
 		c:=a+b
@@ -36,3 +51,22 @@ func main(){
 	sub(20,15)
 	
 }
+
+/*####logic:
+		object,property,relation
+	1.first order logic:object,property,relation niye kaj kore,
+	2.Higher order logic:rules niye kaj kore
+
+	#####First order function:simple jinish niye kaj korbe
+	1.standard or named function
+	2.anonymous function
+	3.IIFE
+	4.function expression
+	######Higher order function/first class function
+	a function will be higher order if any one of the following is true:
+	a.func can be passed as parameter
+	b.function can be returned
+	c.both
+	###callback function:jei function ke higher order function e parameter hishabe pass kori ,shetai callback function
+	##first class citizen:jei variable er moddhe all type data assign kora jay.so jei function er vitor arek func pass korte pari,take bola hoy first class function and that's why higher order function ke bole first class function
+*/  
