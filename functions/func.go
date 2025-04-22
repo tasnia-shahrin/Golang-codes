@@ -4,6 +4,12 @@ import "fmt"
 
 var a=10
 
+//struct:
+type User struct{
+	Name string  //member variable or property
+	Age int
+}
+
 //standard or named function : that has name
 func add(x int,y int){ //parameter : x,y--> value receive
 	sum:=x+y
@@ -49,6 +55,24 @@ func main(){
 		fmt.Println(sub)
 	}
 	sub(20,15)
+
+	//struct:
+	var user1 User
+
+	user1=User{ //instance or object.process:instantiate
+		Name: "Tasnia",
+		Age: 24,
+	}
+
+	fmt.Println("Name: ",user1.Name)
+	fmt.Println("Age: ",user1.Age)
+
+	user2:=User{
+		Name: "Tahura",
+		Age:1,
+	}
+	fmt.Println("Name: ",user2.Name)
+	fmt.Println("Age: ",user2.Age)
 	
 }
 
