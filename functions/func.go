@@ -9,7 +9,20 @@ type User struct{
 	Name string  //member variable or property
 	Age int
 }
+// func printUserDetails(usr User){
+// 	fmt.Println("Name :",usr.Name)
+// 	fmt.Println("Age :",usr.Age)
+// }
 
+//***receiver function:
+func (usr User) printDetails(){ //only custom type ei evabe use kora jabe
+	fmt.Println("Name :",usr.Name)
+	fmt.Println("Age :",usr.Age)
+}
+func (usr User) call(a int){
+	fmt.Println(usr.Name)
+	fmt.Println(a)
+}
 //standard or named function : that has name
 func add(x int,y int){ //parameter : x,y--> value receive
 	sum:=x+y
@@ -64,15 +77,20 @@ func main(){
 		Age: 24,
 	}
 
-	fmt.Println("Name: ",user1.Name)
-	fmt.Println("Age: ",user1.Age)
+	// fmt.Println("Name: ",user1.Name)
+	// fmt.Println("Age: ",user1.Age)
+	//printUserDetails(user1)
+	user1.printDetails() //use of receiver function
 
 	user2:=User{
 		Name: "Tahura",
 		Age:1,
 	}
-	fmt.Println("Name: ",user2.Name)
-	fmt.Println("Age: ",user2.Age)
+	// fmt.Println("Name: ",user2.Name)
+	// fmt.Println("Age: ",user2.Age)
+	//printUserDetails(user2)
+	user2.printDetails()
+	user1.call(10)
 	
 }
 
