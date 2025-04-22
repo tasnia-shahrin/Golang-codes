@@ -5,7 +5,10 @@ import(
 	"tasnia/mathlib"
 )  //go er built-in package(fmt=format)
 
-var v=10 
+var v=10 //global scope e v:=10 lekhle error dekhabe
+
+
+var arr2=[4]string {"tasnia","rumaisha","ekra","tahura"}
 
 func main() {
 
@@ -16,7 +19,7 @@ func main() {
 	var x int = 5 //var name data_type
 	var y = 6.79  //data-type na lekhleo go bujhe ney
 	b := true
-	c:=30
+	//c:=30
 	b = false //first e kono value declaration er time e colon dite hoy.next e oi var e value assign korte gele colon dite hobe na
 	const p = "tasnia"
 	//p="orin"
@@ -47,8 +50,8 @@ func main() {
 	default:
 		fmt.Println("a is neither 5 nor 10 or 15")
 	}
-	sum:=sum(a,c)
-	fmt.Println(sum)
+	// sum:=sum(a,c)
+	// fmt.Println(sum)
 	// block: {} jekono curly-braces and block er inside e joto variable thake shegulo local variable
 
 	//package scope: go mod init tasnia
@@ -63,5 +66,13 @@ func main() {
 		fmt.Println(v)
 	}
 	fmt.Println(v)
+
+	//array:
+	var arr[2] int
+	//shorthand: arr:=[2]int{3,6}
+	arr[0]=3
+	arr[1]=6
+	fmt.Println(arr)
+	fmt.Println(arr2)
 }
 
