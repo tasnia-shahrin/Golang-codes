@@ -69,4 +69,9 @@ func main(){
 	c.both
 	###callback function:jei function ke higher order function e parameter hishabe pass kori ,shetai callback function
 	##first class citizen:jei variable er moddhe all type data assign kora jay.so jei function er vitor arek func pass korte pari,take bola hoy first class function and that's why higher order function ke bole first class function
+
+
+	##2 phases: 1.compilation phase(compile time) 2.execution phase(run time)
+	##go build main.go=>compile it=>create main file.this is binary executable file
+	##then run it by: ./main
 */  
