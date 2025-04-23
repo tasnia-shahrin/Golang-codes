@@ -74,5 +74,10 @@ func main() {
 	arr[1]=6
 	fmt.Println(arr)
 	fmt.Println(arr2)
+
+	//pointer ===> address of memory(RAM)
+	d:=20
+	addr:=&d //& : address of.so &x means addr of x
+	fmt.Println(addr)
 }
 
