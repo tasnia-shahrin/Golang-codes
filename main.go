@@ -10,6 +10,17 @@ var v=10 //global scope e v:=10 lekhle error dekhabe
 
 var arr2=[4]string {"tasnia","rumaisha","ekra","tahura"}
 
+//pointer:
+func print(numbers *[3]int){
+	fmt.Println(numbers)
+}
+
+type User struct{
+	Name string
+	Age int
+	FavFoods []int
+}
+
 func main() {
 
 	fmt.Println("Hello world") //Println er ln=line.ekta line e print korbe then enter diye dibe
@@ -77,7 +88,29 @@ func main() {
 
 	//pointer ===> address of memory(RAM)
 	d:=20
-	addr:=&d //& : address of.so &x means addr of x
-	fmt.Println(addr)
+	addr:=&d //& : address of.so &x means addr of x.this address is not fixed.this is dynamic
+	fmt.Println("value of d: ",d)
+	fmt.Println("Address of variable d:",addr)
+	fmt.Println("value at the address:",*addr) //* means value inside of that address
+
+	//update the value of d through pointer:
+	*addr=30
+	fmt.Println("value of d: ",d)
+	fmt.Println("Address of variable d:",addr)
+	fmt.Println("value at the address:",*addr)
+
+	array:=[3]int{100,200,300}
+	print(&array) //array er each element ekta ekta kore pass na kore array tar address pathacchi.ete time beche jabe.ekhane value gula pass korchina.array er starting address pass korchi.etai holo pass by reference.jokhn array er value pass kori,sheta pass by value
+
+	usr:=User{
+		Name: "Tasnia",
+		Age: 24,
+	}
+	//fmt.Println(usr)
+	struct_addr:=&usr
+	fmt.Println(struct_addr)
+	fmt.Println(*struct_addr)
+	fmt.Println(struct_addr.Name)
+
 }
 
